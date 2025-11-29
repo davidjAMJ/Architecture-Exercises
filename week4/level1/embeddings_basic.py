@@ -10,10 +10,6 @@ Most students should stop after Level 2. Levels 3-4 are optional Tier 3 stretch 
 """
 
 import time
-with open('corpus.txt','r') as file:
-    sentences = None
-    for line in file:
-        sentences += file.readline()
 
 try:
     from sentence_transformers import SentenceTransformer
@@ -24,8 +20,25 @@ except ImportError:
     )
 
 MODEL_NAME = "sentence-transformers/paraphrase-MiniLM-L6-v2"
-                
 TOP_K = 3
+
+
+
+sentences = [
+    "The bank raised interest rates to control inflation.",          
+    "She sat by the river bank watching the sunset.",               
+    "A financial institution approved my mortgage application.",    
+    "The chef prepared a spicy curry for the evening guests.",      
+    "A hot and flavorful dish was served at the dinner table.",     
+    "The jaguar prowled silently through the dense rainforest.",    
+    "A luxury car brand unveiled its latest sports model.",         
+    "Astronomers discovered a new planet orbiting a distant star.", 
+    "Scientists found an exoplanet in a faraway solar system.",     
+    "The artist painted a vivid portrait of a young woman.",        
+]
+
+
+
 
 
 
